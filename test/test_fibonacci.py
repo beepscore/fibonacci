@@ -31,6 +31,22 @@ class TestSparseBinaryNumber(unittest.TestCase):
                              "expected fibonacci({}) == {} but got {}"
                              .format(index, expected, actual))
 
+    def test_fibonacci_n_large(self):
+        """ Current implementation is slow for large n.
+        On Macbook Pro, fibonacci(36) takes ~ 10 seconds
+        python3 -m unittest discover test
+        ..
+        ----------------------------------------------------------------------
+        Ran 2 tests in 10.982s
+        OK
+        """
+        n = 36
+        actual = fibonacci.fibonacci(n)
+        expected = 14930352
+        self.assertEqual(expected, actual,
+                         "expected fibonacci({}) == {} but got {}"
+                         .format(n, expected, actual))
+
 
 if __name__ == "__main__":
     unittest.main()
