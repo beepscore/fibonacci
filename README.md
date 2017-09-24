@@ -18,5 +18,6 @@ Uses memoization to store previous results in a dictionary and reduce execution 
 
 ## How to run unit tests
 In terminal, cd to top level directory that contains subdirectory test
+Because directory test contains __init__.py, can run tests without explicit "discover test"
 
-    $ python3 -m unittest discover test
+    python3 -m unittest
