@@ -2,8 +2,9 @@
 
 
 class Fibonacci:
-
-    # use dictionary to store previous results and reduce execution time
+    """ Uses memoization to store previous results in a dictionary and reduce execution time
+    https://en.wikipedia.org/wiki/Memoization
+    """
     results = {}
 
     def fibonacci(self, n):
@@ -16,7 +17,7 @@ class Fibonacci:
         resursive fibonacci with no storage of previous results
         fibonacci(36) requires ~ 10 seconds
 
-        resursive fibonacci with storage of previous results
+        resursive fibonacci with memoization of previous results
         fibonacci(36) requires ~ 0.001 seconds
         """
 
