@@ -7,6 +7,7 @@ import fibonacci
 class TestFibonacci(unittest.TestCase):
 
     def setUp(self):
+        # setUp tears down memoized results between tests
         self.fib = fibonacci.Fibonacci()
 
         self.fibonacci_numbers = [
@@ -80,6 +81,7 @@ class TestFibonacci(unittest.TestCase):
         self.assertEqual(expected, actual,
                          "expected fibonacci_iterative({}) == {} but got {}"
                          .format(n, expected, actual))
+
 
 if __name__ == "__main__":
     unittest.main()
