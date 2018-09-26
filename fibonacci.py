@@ -39,7 +39,8 @@ class Fibonacci:
 
         else:
             # recurse
-            result = self.fibonacci(n - 1) + self.fibonacci(n - 2)
+            # calculating index-2 before index-1 may help optimize, I didn't test that.
+            result = self.fibonacci(n - 2) + self.fibonacci(n - 1)
 
         self.results[n] = result
         return result
@@ -62,6 +63,7 @@ class Fibonacci:
         # already contain values
         # range excludes upper value so use n + 1
         for index in range(2, n + 1):
+            # calculating index-2 before index-1 may help optimize, I didn't test that.
             result = self.results[index - 2] + self.results[index - 1]
             self.results[index] = result
 
