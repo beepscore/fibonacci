@@ -8,13 +8,15 @@ class Fibonacci:
     https://en.wikipedia.org/wiki/Memoization
     """
 
-    # memoized results of numbers in fibonacci sequence
-    # Could use an array. This could save some memory use index instead of key.
-    # Use dictionary, more general memoization solution and probably a little more convenient.
-    # e.g. dictionary.get(n) is safer and easier than avoiding index out of bounds
-    # key: value == n: fib(n)
-    # seed with fib(0), fib(1)
-    results = {0: 0, 1: 1}
+    def __init__(self):
+
+        # memoized results of numbers in fibonacci sequence
+        # Could use an array. This could save some memory use index instead of key.
+        # Use dictionary, more general memoization solution and probably a little more convenient.
+        # e.g. dictionary.get(n) is safer and easier than avoiding index out of bounds
+        # key: value == n: fib(n)
+        # seed with fib(0), fib(1)
+        self.results = {0: 0, 1: 1}
 
     def fibonacci(self, n: int) -> int:
         """

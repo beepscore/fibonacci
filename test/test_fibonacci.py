@@ -54,6 +54,25 @@ class TestFibonacci(unittest.TestCase):
                          "expected fibonacci({}) == {} but got {}"
                          .format(n, expected, actual))
 
+    def test_fibonacci_iterative_results_12(self):
+        self.fib.fibonacci_iterative(12)
+        expected = {
+            0: 0,
+            1: 1,
+            2: 1,
+            3: 2,
+            4: 3,
+            5: 5,
+            6: 8,
+            7: 13,
+            8: 21,
+            9: 34,
+            10: 55,
+            11: 89,
+            12: 144
+        }
+        self.assertEqual(self.fib.results, expected)
+
     def test_fibonacci_iterative(self):
         for index in range(0, len(self.fibonacci_numbers)):
             actual = self.fib.fibonacci_iterative(index)
