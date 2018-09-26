@@ -8,7 +8,10 @@ class Fibonacci:
     https://en.wikipedia.org/wiki/Memoization
     """
 
-    # memoized results dictionary of numbers in fibonacci sequence
+    # memoized results of numbers in fibonacci sequence
+    # Could use an array. This could save some memory use index instead of key.
+    # Use dictionary, more general memoization solution and probably a little more convenient.
+    # e.g. dictionary.get(n) is safer and easier than avoiding index out of bounds
     # key: value == n: fib(n)
     # seed with fib(1), fib(2)
     results = {0: 0, 1: 1}
