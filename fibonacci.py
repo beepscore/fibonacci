@@ -13,7 +13,7 @@ class Fibonacci:
     # Use dictionary, more general memoization solution and probably a little more convenient.
     # e.g. dictionary.get(n) is safer and easier than avoiding index out of bounds
     # key: value == n: fib(n)
-    # seed with fib(1), fib(2)
+    # seed with fib(0), fib(1)
     results = {0: 0, 1: 1}
 
     def fibonacci(self, n: int) -> int:
