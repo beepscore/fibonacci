@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+# https://docs.python.org/3.6/howto/logging.html#logging-basic-tutorial
+import logging
+
 
 class Fibonacci:
     """
@@ -31,6 +34,7 @@ class Fibonacci:
         recursive fibonacci with memoization of previous results
         fibonacci(36) requires ~ 0.001 seconds
         """
+        logging.info('fibonacci')
 
         if n < 0:
             return None
@@ -52,6 +56,7 @@ class Fibonacci:
         :param n: an integer >= 0
         :return: Fibonacci number
         """
+        logging.info('fibonacci_iterative')
 
         if n < 0:
             return None
@@ -70,3 +75,19 @@ class Fibonacci:
             self.results[index] = result
 
         return self.results[n]
+
+
+if __name__ == "__main__":
+
+    # experiment with writing a log file
+    # https://docs.python.org/3.6/howto/logging.html#logging-basic-tutorial
+    # logger = logging.getLogger(__name__)
+    # logger.setLevel(logging.DEBUG)
+
+    # https://docs.python.org/3.6/howto/logging.html#logging-to-a-file
+    logging.basicConfig(filename='./data/output/fib.log', level=logging.DEBUG)
+
+    fib = Fibonacci()
+    result = fib.fibonacci(5)
+    logging.info(f'{result}')
+
