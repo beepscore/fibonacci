@@ -58,7 +58,7 @@ class Fibonacci:
         :param n: an integer >= 0
         :return: Fibonacci number
         """
-        self.logger.info(f'fibonacci_iterative({n})')
+        self.logger.info(f'n:{n}')
 
         if n < 0:
             return None
