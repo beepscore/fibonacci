@@ -35,7 +35,7 @@ class Fibonacci:
         recursive fibonacci with memoization of previous results
         fibonacci(36) requires ~ 0.001 seconds
         """
-        self.logger.info(f'fibonacci({n})')
+        self.logger.info(f'n:{n}')
 
         if n < 0:
             return None
