@@ -41,11 +41,12 @@ class Fibonacci:
             return None
 
         elif self.results.get(n) is not None:
-            # return memoized result
+            self.logger.debug(f'returning memoized results.get({n}) == {self.results.get(n)}')
             return self.results.get(n)
 
         else:
             # recurse
+            self.logger.debug(f'fibonacci({n - 2}) + fibonacci({n - 1})')
             # calculating index-2 before index-1 may help optimize, I didn't test that.
             result = self.fibonacci(n - 2) + self.fibonacci(n - 1)
 
@@ -81,6 +82,5 @@ class Fibonacci:
 if __name__ == "__main__":
 
     fib = Fibonacci()
-    result = fib.fibonacci(5)
-    fib.logger.info(f'{result}')
+    result = fib.fibonacci(10)
 
