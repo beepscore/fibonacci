@@ -21,16 +21,27 @@ def get_logger(name):
 
     # add one or more handlers
 
-    # log to file
-    # mode 'a' append, not 'w' write
-    handler = logging.FileHandler('./data/output/fib.log', mode='a')
-    handler.setFormatter(formatter)
-    logger.addHandler(handler)
-
     # log to terminal stdout
     screen_handler = logging.StreamHandler(stream=sys.stdout)
     screen_handler.setFormatter(formatter)
     logger.addHandler(screen_handler)
+
+    """
+    comment out log to file.
+    instead log to stream only.
+    let program user decide if they want to pipe stream output to a file e.g.
+        python3 fibonacci.py >> ../fib.log
+        python3 -m unittest >> ../test.log
+    references
+    "logging in an application"
+    https://docs.python-guide.org/writing/logging/
+    https://12factor.net/logs
+    """
+    # log to file
+    # mode 'a' append, not 'w' write
+    # handler = logging.FileHandler('./data/output/fib.log', mode='a')
+    # handler.setFormatter(formatter)
+    # logger.addHandler(handler)
 
     return logger
 
