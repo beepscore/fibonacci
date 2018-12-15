@@ -2,6 +2,7 @@
 
 import logging_util
 
+# instantiate at module level, not class level
 # https://stackoverflow.com/questions/22807972/python-best-practice-in-terms-of-logging
 logger = logging_util.get_logger(__name__)
 
