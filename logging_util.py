@@ -21,7 +21,8 @@ def get_logger(name):
     # add one or more handlers
 
     # log to file
-    handler = logging.FileHandler('./data/output/fib.log', mode='w')
+    # mode 'a' append, not 'w' write
+    handler = logging.FileHandler('./data/output/fib.log', mode='a')
     handler.setFormatter(formatter)
     logger.addHandler(handler)
 
