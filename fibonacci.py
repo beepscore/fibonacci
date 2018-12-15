@@ -2,6 +2,9 @@
 
 import logging_util
 
+# https://stackoverflow.com/questions/22807972/python-best-practice-in-terms-of-logging
+logger = logging_util.get_logger(__name__)
+
 
 class Fibonacci:
     """
@@ -11,8 +14,6 @@ class Fibonacci:
     """
 
     def __init__(self):
-
-        self.logger = logging_util.get_logger('fib')
 
         # memoized results of numbers in fibonacci sequence
         # Could use an array. This could save some memory use index instead of key.
@@ -35,18 +36,18 @@ class Fibonacci:
         recursive fibonacci with memoization of previous results
         fibonacci(36) requires ~ 0.001 seconds
         """
-        self.logger.info(f'n:{n}')
+        logger.info(f'n:{n}')
 
         if n < 0:
             return None
 
         elif self.results.get(n) is not None:
-            self.logger.debug(f'returning memoized results.get({n}) == {self.results.get(n)}')
+            logger.debug(f'returning memoized results.get({n}) == {self.results.get(n)}')
             return self.results.get(n)
 
         else:
             # recurse
-            self.logger.debug(f'fibonacci({n - 2}) + fibonacci({n - 1})')
+            logger.debug(f'fibonacci({n - 2}) + fibonacci({n - 1})')
             # calculating index-2 before index-1 may help optimize, I didn't test that.
             result = self.fibonacci(n - 2) + self.fibonacci(n - 1)
 
@@ -58,7 +59,7 @@ class Fibonacci:
         :param n: an integer >= 0
         :return: Fibonacci number
         """
-        self.logger.info(f'n:{n}')
+        logger.info(f'n:{n}')
 
         if n < 0:
             return None

@@ -5,6 +5,7 @@ import sys
 
 def get_logger(name):
     """
+    https://stackoverflow.com/questions/22807972/python-best-practice-in-terms-of-logging
     https://stackoverflow.com/questions/28330317/print-timestamp-for-logging-in-python
     https://docs.python.org/3/library/logging.html#formatter-objects
     https://docs.python.org/3.6/howto/logging.html#logging-basic-tutorial
