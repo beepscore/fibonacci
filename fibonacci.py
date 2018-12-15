@@ -83,4 +83,5 @@ if __name__ == "__main__":
 
     fib = Fibonacci()
     result = fib.fibonacci(10)
+    result = fib.fibonacci_iterative(10)
 
