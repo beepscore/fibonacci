@@ -1,6 +1,7 @@
 # Purpose
 Find the nth Fibonacci number.
-Uses memoization to store previous results in a dictionary and reduce execution time
+Uses memoization to store previous results in a dictionary and reduce execution time.
+Use python logging.
 
 # References
 <https://en.wikipedia.org/wiki/Fibonacci_number>
